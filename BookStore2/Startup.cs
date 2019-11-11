@@ -28,7 +28,7 @@ namespace BookStore2
         {
             services.AddMvc();
             services.AddSingleton<IBookStoreRepositories<Author>, AuthorReporsitory>();
-            services.AddSingleton<IBookStoreRepositories<Book>, BookRepository>();
+            services.AddSingleton<IBookStoreRepositories<Book>, BookReporsitory>();
             services.AddMvc(option => option.EnableEndpointRouting = false);
             services.AddDbContext<BookStoreDbContext>(options => {
                 options.UseSqlServer(configuration.GetConnectionString(
